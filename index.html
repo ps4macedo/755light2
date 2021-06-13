@@ -1,43 +1,5 @@
 <html manifest="cache.manifest">
 <style>
-.button:focus, .button::-moz-focus-inner{
-  outline:none;
-  border:none;
-}
-.button{
-  font-family: arial;
-  font-size:16px;
-  text-transform: uppercase;
-  font-weight:700;
-  border:2px solid #404040;
-  border-radius: 4px;
-  padding:10px;
-  cursor: pointer;
-  display:inline-block;
-  text-decoration: none;
-  background:transparent;
-  color:#d4d7d8;
-  box-shadow:0 5px 0 #878787;
-}
-.button:hover{
-  font-size:22px;
-  background:#242424;
-  border:2px solid #ffffff;
-  box-shadow:0 5px 0 #cccccc;
-  color:white;
-}
-.button:active{
-  background:#ee596f;
-  position:relative;
-  color:black;
-  top:5px;
-  box-shadow:none;
-}
-input{
-  width:25px;
-  height:25px;
-  background-color: transparent;
-}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -216,7 +178,7 @@ input{
 .pointer {cursor: pointer;}
 </style>
 <head>
-	<title>PS4MACEDO 7.55 Light v2 (jb02052021)</title>
+	<title>PS4MACEDO 7.55 SuperLight (Jb02052021+Ghen11)</title>
 </head>
 	<br><br><br><br><br><br><br><br><br><br><br>
 	<body onload="go()" class="bg">
@@ -260,10 +222,10 @@ input{
 		function done(){
 			document.getElementById("myProgress").remove();
 			document.getElementById("progress").innerHTML="Exploração do kernel concluída!!! Agora injetando GoldHen... Por favor, <font color=\"#ee596f\">AGUARDE!!!</font>";
-			preloadScripts(['preloader.js', 'goldhen11.js', 'loader.js']);
+			preloadScripts(['preloader.js', 'goldhen10.js', 'loader.js']);
 			if(window.postPayload)
 				window.postPayload();
-			setTimeout(function(){document.getElementById("progress").innerHTML="<font color=\"#ee596f\"><b>GoldHen versão 1.1 injetado com sucesso!</b></font><br><br><br><br>B o a&nbsp&nbsp&nbspd i v e r s ã o ! ! !"; }, 7000);	
+			setTimeout(function(){document.getElementById("progress").innerHTML="<font color=\"#ee596f\"><b>GoldHen versão 1.0 injetado com sucesso!</b></font><br><br><br><br>B o a&nbsp&nbsp&nbspd i v e r s ã o ! ! !"; }, 7000);	
 		}
 		
 		window.midExploit = function()
@@ -276,9 +238,8 @@ input{
 			setTimeout(function()
 			{	
 				eval.call(window, scriptCode);
-				done();
+				if(main_ret == 0 || main_ret == 179) {done();}else{alert("Jailbreak FALHOU! Reinicie o PS4 sem sair dessa tela, usando o botão \"PS\" \n e tente novamente.");}
 			}, 100);
-
 		};
 		
 		window.postPayload = function()
@@ -286,9 +247,8 @@ input{
 			setTimeout(function()
 			{	
 				eval.call(window, scriptCode);
-				if(main_ret == 0 || main_ret == 179) {done();}else{alert("Jailbreak FALHOU! Reinicie o PS4 sem sair dessa tela, usando o botão \"PS\" \n e tente novamente.");}
+				//done();
 			}, 100);
-
 		};
 
 		</script>
